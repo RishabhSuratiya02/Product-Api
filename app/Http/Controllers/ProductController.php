@@ -9,7 +9,7 @@ class ProductController extends Controller
 {
     private $fileName = 'products.json';
 
- 
+ //for getting products by id
     private function getProducts()
     {
       
@@ -21,7 +21,7 @@ class ProductController extends Controller
         return json_decode(Storage::get($this->fileName), true);
     }
 
- 
+
     private function saveProducts($products)
     {
         Storage::put($this->fileName, json_encode($products, JSON_PRETTY_PRINT));
